@@ -1,0 +1,20 @@
+{
+  "name": "aprendiendoreact",
+  "version": "1.0.0",
+  "description": "aprendiendo react con midudev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axodaraph/React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Axodaraph/React/issues"
+  },
+  "homepage": "https://github.com/Axodaraph/React#readme"
+}
