@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Axodaraph/React/issues"
   },
-  "homepage": "https://github.com/Axodaraph/React#readme"
+  "homepage": "https://github.com/Axodaraph/React#readme",
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
 }
