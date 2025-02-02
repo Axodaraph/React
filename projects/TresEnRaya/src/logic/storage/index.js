@@ -1,10 +1,10 @@
 export const saveGameStorage = ({ board, turn }) => {
   // guardar aqui partida
-  window.localStorage.setItem("board", JSON.stringify(board));
-  window.localStorage.setItem("turn", turn);
+  globalThis.localStorage.setItem("board", JSON.stringify(board));
+  globalThis.localStorage.setItem("turn", turn);
 };
 
 export const resetGameStorage = () => {
-  window.localStorage.removeItem("board");
-  window.localStorage.removeItem("turn");
+  globalThis.localStorage.removeItem("board");
+  globalThis.localStorage.removeItem("turn");
 };

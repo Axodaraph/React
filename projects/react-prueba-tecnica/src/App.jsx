@@ -1,28 +1,16 @@
-import { useEffect, useState } from "react"
 import './App.css'
-import { getRandomFact } from "./services/facts"
+import { useCatFact } from "./hooks/useCatFact"
 import { useCatImage } from "./hooks/useCatImage"
 
 
 
 
 export function App () {
-    const [fact, setFact] = useState()
+    const {fact, refreshRandomFact} = useCatFact()
     const {imageUrl} = useCatImage({fact})
 
-    
-//efecto para recuperar la cita al cargar la pagina
-    useEffect(() => {
-
-        getRandomFact().then(newFact => setFact(newFact))
-
-    }, [])
-
-    
-
     const handleClick = async () => {
-       const newFact = await getRandomFact()
-       setFact(newFact)
+       refreshRandomFact()
     }
 
     return (
