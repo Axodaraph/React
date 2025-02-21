@@ -1,2 +1,2 @@
 # React
-aprendiendo react con midudev
+using React for create simple webs
