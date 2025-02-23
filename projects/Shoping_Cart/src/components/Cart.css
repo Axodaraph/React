@@ -6,6 +6,11 @@
     right: 0px;
     top: 0px;
     width: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    white-space: nowrap;
   }
   
   .cart img {
@@ -53,4 +58,14 @@
   .cart-button ~ input:checked ~ .cart {
     height: 100%;
     display: block;
+  }
+
+  @media (max-width: 940px) {
+    .cart {
+      width: 100%;
+    }
+    .cart-button {
+      right: 10px;
+      top: 10px;
+    }
   }
