@@ -3,9 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
   }
   
   .products ul {
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(
       auto-fit,

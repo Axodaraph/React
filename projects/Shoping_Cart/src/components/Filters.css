@@ -10,3 +10,9 @@
     display: flex;
     gap: 1rem;
 }
+
+@media (max-width: 599px) {
+    .filters{
+        flex-direction: column;
+    }
+}
