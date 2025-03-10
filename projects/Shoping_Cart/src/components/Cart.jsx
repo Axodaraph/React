@@ -3,12 +3,12 @@ import { CartIcon, ClearCartIcon } from "./Icons";
 import './Cart.css'
 import { useCart } from "../Hooks/useCart.js";
 
-function CartItem ({thumbnail, price, title, quantity, addToCart}) {
+function CartItem ({imagen, price, nombre, quantity, addToCart}) {
     return (
         <li>
-            <img src={thumbnail} alt={title} />
+            <img src={imagen} alt={nombre} />
             <div>
-                <strong>{title}</strong> - ${price}
+                <strong>{nombre}</strong> - ${price}
             </div>
 
             <footer>
@@ -25,14 +25,14 @@ export function Cart () {
 
     return (
         <>
-            <label className="cart-button" htmlFor={cartCheckboxId} >
+                 <label className="cart-button" htmlFor={cartCheckboxId} >
             <CartIcon/>
             </label>
             <input type="checkbox" id={cartCheckboxId} hidden />
             <aside className="cart">
                 <ul>
                     {cart.map(product => (
-                        <CartItem key={product.id}
+                        <CartItem key={product._id}
                         addToCart={() => addToCart(product)}
                         {...product}
                         />

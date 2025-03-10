@@ -19,7 +19,7 @@ function App() {
     <Header />
     <Cart/>
     <Products products={filtredProducts} />
-    {IS_DEVELOPMENT && <Footer />} 
+    { IS_DEVELOPMENT && <Footer /> } 
     </CartProvider>
   )
 }
