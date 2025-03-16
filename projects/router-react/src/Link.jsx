@@ -1,4 +1,4 @@
-import { EVENT } from './constant/const.js'
+import { BUTTONS, EVENT } from './constant/const.js'
 export function navigate (href) {
     globalThis.history.pushState({},'', href)
     // crear un evento personalizado
@@ -11,13 +11,14 @@ export function Link ({target, to, ...props}){
         //para evitar la recarga por defecto
         
 
-        const isMainEvent = event.button === 0 //primary click
+        const isMainEvent = event.button === BUTTONS.primary //primary click
         const isModifiedEvent = event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
         const isManageableEvent = target === undefined || target === '_self'
 
         if (isMainEvent && isManageableEvent && !isModifiedEvent){
             event.preventDefault() 
             navigate(to)
+            globalThis.scrollTo(0, 0)
         }
 
        

@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import { EVENT } from './constant/const.js'
-
 import  HomePage  from './pages/HomePage.jsx'
 import  AboutPage  from './pages/AboutPage.jsx' 
+import { Router } from './Router.jsx'
+import Page404 from './pages/404.jsx'
+import SearchPage from './pages/Search.jsx'
+import { Route } from './pages/Route.jsx'
+
+const routes = [{
+    path: '/search/:query',
+    Component: SearchPage
+  }
+]
+
+
+
+
 
 function App() {
-  const [currentPath, setCurrentPath] = useState(globalThis.location.pathname)
-
-  useEffect(()=>{
-    const onLocationChange = () => {
-      setCurrentPath(globalThis.location.pathname)
-    }
-    globalThis.addEventListener(EVENT.PUSHSTATE, onLocationChange)
-    globalThis.addEventListener(EVENT.POPSTATE, onLocationChange)
-
-    return () => {
-      globalThis.removeEventListener(EVENT.PUSHSTATE, onLocationChange)
-      globalThis.addEventListener(EVENT.POPSTATE, onLocationChange)
-    }
-  },[])
+  
   return (
     <main>
-      {currentPath === '/' && <HomePage/>}
-      {currentPath === '/about' && <AboutPage/>}
+      <Router routes={routes}  defaultComponent={Page404}>
+        <Route path='/' Component={HomePage} ></Route>
+        <Route path='/about' Component={AboutPage} ></Route>
+      </Router>
     </main>
   )
 }
